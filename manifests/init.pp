@@ -29,10 +29,10 @@
 #
 #  play::service { "bilderverwaltung" :
 #	path    => "/home/clement/demo/bilderverwaltung",
-#	require => [Jdk6["Java6SDK"], Play::Module["mongodb module"]]
+#	require => [Jdk7["Java6SDK"], Play::Module["mongodb module"]]
 #  }
 #
-class play ($version = "2.1.3", $install_path = "/opt") {
+class play ($version = "2.1.3", $install_path = "/usr/local/share/applications") {
 
 	include wget
 
