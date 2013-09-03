@@ -29,7 +29,7 @@
 #
 #  play::service { "bilderverwaltung" :
 #	path    => "/home/clement/demo/bilderverwaltung",
-#	require => [Jdk7["Java6SDK"], Play::Module["mongodb module"]]
+#	require => [Jdk7["Java7SDK"], Play::Module["mongodb module"]]
 #  }
 #
 class play ($version = "2.1.3", $install_path = "/usr/local/share/applications/play-2.1.3") {
