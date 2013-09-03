@@ -54,26 +54,26 @@ class play ($version = "2.1.3", $install_path = "/usr/local/share/applications")
         command => "/bin/mkdir -p ${install_path}",
         unless  => "test -d ${install_path}"
     }
-
-	exec {"unzip-play-framework":
-	    cwd     => "${install_path}",
-        command => "/usr/bin/unzip /tmp/play-${play_version}.zip",
-        unless  => "test -d $play_path",
-        require => [ Package["unzip"], Wget::Fetch["download-play-framework"], Exec["mkdir.play.install.path"] ],
-	}
+    ->
+    exec {"unzip-play-framework":
+      cwd     => "${install_path}",
+      command => "/usr/bin/unzip /tmp/play-${play_version}.zip",
+      unless  => "test -d $play_path",
+      require => [ Package["unzip"], Wget::Fetch["download-play-framework"], Exec["mkdir.play.install.path"] ],
+    }
 	
-	file { "$play_path/play":
-	    ensure  => file,
-	    owner   => "root",
-	    mode    => "0755",
-	    require => [Exec["unzip-play-framework"]]
-	}
+    file { "$play_path/play":
+      ensure  => file,
+      owner   => "root",
+      mode    => "0755",
+      require => [Exec["unzip-play-framework"]]
+    }
 
-	file {'/usr/bin/play':
-	    ensure  => 'link',
-	    target  => "$play_path/play",
-	    require => File["$play_path/play"],
-	}
+    file {'/usr/bin/play':
+      ensure  => 'link',
+      target  => "$play_path/play",
+      require => File["$play_path/play"],
+    }
 
     # Add a unversioned symlink to the play installation.
     file { "${install_path}/play":
