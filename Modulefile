@@ -19,7 +19,7 @@ description "Provision play framework and define play modules and applications a
 
 	play::service { 'bilderverwaltung' :
 		path => '/home/clement/demo/bilderverwaltung',
-		require => [Jdk6['Java6SDK'], Play::Module['mongodb module']]
+		require => [Jdk7['Java7SDK'], Play::Module['mongodb module']]
 	}
 "
 
