@@ -18,7 +18,7 @@
 # Sample Usage:
 #  include play
 #  play::module {"mongodb module" :
-# 	module  => "mongo-1.3", 
+# 	module  => "mongo-2.4.6", 
 #	require => [Class["play"], Class["mongodb"]]
 #  }
 #
@@ -55,7 +55,7 @@ class play ($version = "2.1.3", $install_path = "/usr/local/share/applications/p
     ->
     exec {"unzip-play-framework":
       cwd     => "${install_path}",
-      command => "/usr/bin/unzip /tmp/play-${play_version}.zip",
+      command => "/usr/bin/unzip -u -o /tmp/play-${play_version}.zip",
       require => [ Package["unzip"], Wget::Fetch["download-play-framework"], Exec["mkdir.play.install.path"] ],
     }
     ->
