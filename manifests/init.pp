@@ -81,6 +81,5 @@ class play ($version = "2.1.3", $install_path = "/usr/local/share/applications")
         target => $play_path,
         require => Exec["mkdir.play.install.path", "unzip-play-framework"]
     }
-    ->
     if !defined(Package['unzip']){ package{"unzip": ensure => installed} }	
 }
