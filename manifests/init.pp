@@ -1,7 +1,7 @@
 # Class: play
 #
 # This module manages play framework applications and modules.
-# The class itself installs Play 1.2.3 in /opt/play-1.2.3
+# The class itself installs Play 2.1.3 in /opt/play-2.1.3
 #
 # Actions:
 #  play::module checks the availability of a Play module. It installs
