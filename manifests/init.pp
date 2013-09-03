@@ -32,7 +32,7 @@
 #	require => [Jdk6["Java6SDK"], Play::Module["mongodb module"]]
 #  }
 #
-class play ($version = "1.2.3", $install_path = "/opt") {
+class play ($version = "2.1.3", $install_path = "/opt") {
 
 	include wget
 
