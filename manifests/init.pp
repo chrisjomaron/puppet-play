@@ -51,14 +51,12 @@ class play ($version = "2.1.3", $install_path = "/usr/local/share/applications/p
         }
 
     exec { "mkdir.play.install.path":
-        command => "/bin/mkdir -p ${install_path}",
-        unless  => "test -d ${install_path}"
+        command => "/bin/mkdir -p ${install_path}"
     }
     ->
     exec {"unzip-play-framework":
       cwd     => "${install_path}",
       command => "/usr/bin/unzip /tmp/play-${play_version}.zip",
-      unless  => "test -d $play_path",
       require => [ Package["unzip"], Wget::Fetch["download-play-framework"], Exec["mkdir.play.install.path"] ],
     }
     ->
