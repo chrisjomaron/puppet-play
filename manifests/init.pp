@@ -39,9 +39,8 @@ class play ($version = "2.1.3", $install_path = "/usr/local/share/applications/p
 	$play_version = $version
 	$play_path = "${install_path}/play-${play_version}"
 	$download_url = $play_version ? {
-	  whatever => "http://downloads.typesafe.com/play/${play_version}/play-${play_version}.zip",
+	  whatever => "http://downloads.typesafe.com/play/${play_version}/play-${play_version}.zip"
 	}
-	/play/2.1.3/play-2.1.3.zip
 	
 	notice("Installing Play ${play_version}")
         wget::fetch {'download-play-framework':
