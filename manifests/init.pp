@@ -1,7 +1,7 @@
 # Class: play
 #
 # This module manages play framework applications and modules.
-# The class itself installs Play 2.1.3 in /usr/local/share/applications/play-2.1.3
+# The class itself installs Play 2.2.0 in /usr/local/share/applications/play-2.2.0
 #
 # Actions:
 #  play::module checks the availability of a Play module. It installs
@@ -32,7 +32,7 @@
 #	require => [Jdk7["Java7SDK"], Play::Module["mongodb module"]]
 #  }
 #
-class play ($version = "2.1.3", $install_path = "/usr/local/share/applications/play-2.1.3") {
+class play ($version = "2.2.0", $install_path = "/usr/local/share/applications/play-2.2.0") {
 
 	include wget
 
