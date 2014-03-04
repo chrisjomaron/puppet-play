@@ -1,4 +1,4 @@
-name    'play'
+name    'puppet-play'
 version '0.0.2'
 source 'akquinet'
 author 'Clement Escoffier - akquinet tech@spree Gmbh'
